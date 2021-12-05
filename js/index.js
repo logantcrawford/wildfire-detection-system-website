@@ -64,15 +64,27 @@ async function predict() {
       window.alert("Please select an image before submit.");
       return;
     }
-    let tensorImg = tf.browser.fromPixels(imagePreview).resizeNearestNeighbor([100, 178]).toFloat().expandDims();
-    prediction = await model.predict(tensorImg).data();
-    if (prediction[0] === 0) {
-        predResult.innerHTML = "I think it's a cat";
-    } else if (prediction[0] === 1) {
-        predResult.innerHTML = "I think it's a dog";
-    } else {
-        predResult.innerHTML = "This is Something else";
+    try {
+        let tensorImg = tf.browser.fromPixels(imagePreview).resizeNearestNeighbor([100, 178]).toFloat().expandDims();
+        prediction = await model.predict(tensorImg).data();
+
+        console.log(prediction[0])
+        if (prediction[0] === 0) {
+            predResult.innerHTML = "No Wildfire Detection";
+            predResult.classList.add('safe');
+        } else if (prediction[0] === 1) {
+            predResult.innerHTML = "Warning Potential Wildfire";
+            predResult.classList.add('warning');
+        } else {
+            predResult.innerHTML = "There was an issue";
+            predResult.classList.add('unsure');
+        }
+    } 
+    catch(error){
+        predResult.innerHTML = "There was an issue";
+        predResult.classList.add('unsure');
     }
+
     show(predResult)
 }
 

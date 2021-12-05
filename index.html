@@ -6,10 +6,10 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200|Open+Sans+Condensed:700" rel="stylesheet">
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+        <!-- <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         <title>AI Wildfire Detection</title>
@@ -74,13 +74,57 @@
                         <div class="row row-small">
                             <div class="about__text">
                                 <div class="heading-tertiary">Protecting the Forest.</div>
-                                <div class="about__paragraph u-margin-bottom-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aperiam, cumque placeat minus omnis aut necessitatibus et repudiandae. Harum est nisi provident iste debitis rem a. Optio magnam aliquid non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo molestias eius accusantium possimus blanditiis nihil placeat, iure molestiae soluta, suscipit consequuntur illo quidem? Consectetur accusantium voluptatem sapiente vitae eligendi? Excepturi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto nemo placeat inventore, dolor sit officiis. Asperiores temporibus officia quasi, magnam, nesciunt maxime amet ullam nulla fugiat ipsam totam maiores saepe?</div>
-                                <div class="about__paragraph u-margin-bottom-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aperiam, cumque placeat minus omnis aut necessitatibus et repudiandae. Harum est nisi provident iste debitis rem a. Optio magnam aliquid non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo molestias eius accusantium possimus blanditiis nihil placeat, iure molestiae soluta, suscipit consequuntur illo quidem? Consectetur accusantium voluptatem sapiente vitae eligendi? Excepturi!</div>
-                                <div class="about__paragraph u-margin-bottom-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aperiam, cumque placeat minus omnis aut necessitatibus et repudiandae. Harum est nisi provident iste debitis rem a. Optio magnam aliquid non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo molestias eius accusantium possimus blanditiis nihil placeat, iure molestiae soluta, suscipit consequuntur illo quidem? Consectetur accusantium voluptatem sapiente vitae eligendi? Excepturi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga blanditiis totam soluta, sed corrupti, error rerum veritatis consectetur tempore cumque pariatur et? Officiis ipsam deserunt, placeat quaerat non at inventore.</div>
+                                <div class="about__paragraph u-margin-bottom-small">In recent years, climate change has facilitated an inexcusable influx of large-scale droughts and lengthy fire seasons across the globe. Disturbingly the dramatic increase in wildfires has devastated communities and natural beauty. In California, during the record drought conditions of 2014, Fire Safe Marin, Pacific Gas and Electric Company (PG&E), and Marin County Fire Department collaborated to install Marin’s remote wildfire detection system. One of the first systems served to assist firefighters in identifying new wildfire locations. Since then, the operations had expanded in 2017. The Geographic community has pressured local and federal governments to implement human-monitored camera systems to detect forest fires.</div>
+                                <div class="about__paragraph u-margin-bottom-small">While there is a wide range of methods in monitoring forests, only recently have methods of virtual segmentation datasets for image recognition that can realistically simulate large-scale tree canopies been available. This research avenue has expanded due to advancements in real-time rendering through advanced graphics cards capable of light particle simulation with ray tracing and virtual geometry systems such as Nanite available through Unreal Engine 5. Together these methods provide a realistic environment virtually that can replace the needs for real-life image data collection.</div>
+                                <div class="heading-tertiary">Developing an Unreal Dataset.</div>
+                                <div class="about__paragraph u-margin-bottom-small">Using Unreal Engine for dataset generation can be plug-and-play with Blueprints and landscape procedural generation. Though there is significant research and design in generating accurate data, the core methods are simplistic. They are essentially teleporting a first-person controller around the map to take screenshots of the landscape to create a robust dataset.</div>
+                                <div class="about__paragraph u-margin-bottom-small">Though for this project, we needed variation in the environment. We used a <a href="https://www.unrealengine.com/marketplace/en-US/product/sky-creator/reviews" style="color: #F25757;">plugin for Unreal Engine called Sky Creator</a> that could dynamically change the time of day and cloud coverage. By creating small datasets of minor variations with these differing conditions, we combined them into a large dataset that represents the landscape with typical cloud coverages and lighting conditions. </div>
+                                <div class="sm-background sm-background--2 sm-background--large"></div>
+                                <br>
+                                <div class="about__paragraph u-margin-bottom-small">The dataset we created is a 35 x 35 kilometers map based on real-life topography outside Nimrod, Oregon, in the Willamette National Forest. Known for their beautiful dense Douglass Fir forests, these forests can easily be replicated in-game through procedural generation by creating parameters between various assets. Though processing power is a limiting factor, using Unreal console commands can help get clear screenshots. </div>
+                                <div class="about__paragraph u-margin-bottom-small">Of course, not every landscape looks like the one we generated. But that is precisely the reason we chose to use Unreal Engine to create a custom dataset. Suppose we included another geographic area like the Western Rocky Mountains or the Australian Bush. In that case, we can get real-life topography and use procedural generation precisely like I did to populate the landscape with foliage. </div>
 
-                                <a href="policy.html" class="btn-text btn-text--black btn-text--small">Watch the Video</a>
+                                <div class="heading-tertiary">Data Processing and Modeling.</div>
+                                <div class="about__paragraph u-margin-bottom-small"></div>
+                                <div class="heading-tertiary">Measuring Performance.</div>
+                                <div class="about__paragraph u-margin-bottom-small"></div>
+                                <div class="heading-tertiary">The Future of Unreal Datasets.</div>
+                                <div class="about__paragraph u-margin-bottom-small">This type of dataset generation is extremely new because it wasn't quite possible in the past. But as graphical technologies dramatically improve, the line of real-life and hyper-realism is blurred. Today the latest iterations of Unreal Engine come closer than we ever have in real-time to replicating life, and indeed, with careful calibration, can look real life to a neural network. </div>
+                                <div class="about__paragraph u-margin-bottom-small">Though virtual datasets for image segmentation is not foolproof and needs careful consideration for the environment it represents, it certainly has a future in climate science in the greater data science fields. Our hope for this project is to add to the research of such datasets and provide input on how future developments can improve with our findings. For further information or continued explanation, please refer to the full article. </div>
+                                
+                                <a href="https://docs.google.com/document/d/1KL5m8Rhk-LxnvMVKsS_5K8OEObJSrm4m_Zfzep6vTIA/edit?usp=sharing" class="btn-text btn-text--black btn-text--small">View the Full Paper</a> 
+                                &nbsp; &nbsp;
+                                <a href="https://github.com/sdeittrick/Wildfire_Detection_Capstone_697" class="btn-text btn-text--black btn-text--small">See on Github</a>
                             </div>  
                         </div>
+                    </div>
+                    <div class="about__row" id="section__updates">
+                        <div class="row row-small">
+                            <div class="col-1-of-2">
+                                <div class="about__image about__image--4 about__image--small"></div>
+                            </div>
+                            <div class="col-1-of-2">
+                                <div class="about__text">
+                                    <div class="heading-tertiary">Preventing Wildfires.</div>
+                                    <div class="about__paragraph u-margin-bottom-small">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae quis suscipit maiores vitae at architecto amet atque minus voluptate doloremque a velit ipsa, temporibus nam recusandae corrupti assumenda. Saepe, itaque!</div>
+                                    <a href="" class="btn-text btn-text--black btn-text--small">Watch the Video</a>
+                                </div>                                
+                            </div>
+                        </div>  
+                    </div> 
+                    <div class="about__row" id="section__updates">
+                        <div class="row row-small">
+                            <div class="col-1-of-2">
+                                <div class="about__image about__image--3 about__image--small"></div>
+                            </div>
+                            <div class="col-1-of-2">
+                                <div class="about__text">
+                                    <div class="heading-tertiary">Game Engines for Datasets?</div>
+                                    <div class="about__paragraph u-margin-bottom-small">Is Unreal Engin the future of image segmentation dataset generation? Maybe, but it certainly takes a lot of work and understanding of the environment to get ideal results. Let’s discuss some of the pros and cons of the approach.</div>
+                                    <a href="" class="btn-text btn-text--black btn-text--small">Watch the Video</a>
+                                </div>                                
+                            </div>
+                        </div>   
                     </div>
                     <div class="about__row" id="section__updates">
                         <div class="row row-small">
@@ -90,8 +134,8 @@
                             <div class="col-1-of-2">
                                 <div class="about__text">
                                     <div class="heading-tertiary">Creating a Neural Network.</div>
-                                    <div class="about__paragraph u-margin-bottom-small">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, ipsum! Quisquam vel illum veniam hic voluptatem nulla ab pariatur fugit? Impedit quo aperiam earum dolore cum adipisci eveniet, aliquam unde?</div>
-                                    <a href="policy.html" class="btn-text btn-text--black btn-text--small">Watch the Video</a>
+                                    <div class="about__paragraph u-margin-bottom-small">Using Tensorflow and Keras we created a Convolutional Neural Network trained on nearly 3000 images that combat overfitting and augmentation images all while determining the best parameters.</div>
+                                    <a href="https://youtu.be/9kNCwVgJjYQ" class="btn-text btn-text--black btn-text--small">Watch the Video</a>
                                 </div>                                
                             </div>
                         </div>                        
@@ -122,14 +166,19 @@
                             <div class="col-1-of-2">
                                 <div class="about__text">
                                     <div class="heading-tertiary">Test Your Own Image.</div>
-                                    <div class="about__paragraph u-margin-bottom-small">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore maiores nobis quos optio, vel dolorum officia tempore similique? Quis ratione non consectetur molestiae molestias. Veritatis accusantium facere harum ea libero.</div>
-
+                                    <div class="about__paragraph u-margin-bottom-small">Don’t have your own images? You can <a href="https://drive.google.com/file/d/1ypOWtpAokHZmOv50lEn3a6iGQ1igfjlb/view?usp=sharing" style="color: #F25757;">download real-life and Unreal Game engine images here </a>to test out the neural network.</div>
 
                                     <input type="button" value="Clear Results" class="btn-text btn-text--black btn-text--small" onclick="clearImage();"/>
-                                    <input type="button" value="Classify Image" class="btn-text btn-text--black btn-text--small" onclick="predict();">
-                                    <a href="https://github.com/sdeittrick/Wildfire_Detection_Capstone_697" class="btn-text btn-text--black btn-text--small">Read on Github</a>
+                                    &nbsp; &nbsp;
+                                    <input type="button" value="Classify Image" class="btn-text btn-text--black btn-text--small" onclick="predict();"> 
+                                    <!-- &nbsp; &nbsp;
+                                    <a href="https://github.com/sdeittrick/Wildfire_Detection_Capstone_697" class="btn-text btn-text--black btn-text--small">See on Github</a> -->
+                                    <!-- <div style="text-align: center;font-weight: 900;" id="pred-result2" class="hidden"></div> -->
+                                    <br><br><br>
+                                    <div class="about__paragraph u-margin-bottom-small" id="pred-result2" class="hidden"></div>
+                                    
 
-                                    <div style="text-align: center;font-weight: 900;" id="pred-result2" class="hidden"></div>
+                                    
                                 </div>                            
                             </div>
                             <div id="image-box">

@@ -49,7 +49,8 @@ function updateThumbnail(dropZoneElement, file) {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = () => {
-          thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+            thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+            thumbnailElement.src=`${reader.result}`;
         };
         image_dir = reader;
     } else {
@@ -65,12 +66,16 @@ async function predict() {
       return;
     }
     try {
-        let tensorImg = tf.browser.fromPixels(imagePreview).resizeNearestNeighbor([100, 178]).toFloat().expandDims();
+        let tensorImg = tf.browser.fromPixels(imagePreview).resizeNearestNeighbor([100, 195]).expandDims();
         prediction = await model.predict(tensorImg).data();
 
-        console.log(prediction[0])
+        predResult.classList.remove('warning');
+        predResult.classList.remove('unsure');
+        predResult.classList.remove('safe');
+
+        // console.log(prediction)
         if (prediction[0] === 0) {
-            predResult.innerHTML = "No Wildfire Detection";
+            predResult.innerHTML = "No Wildfire Detected";
             predResult.classList.add('safe');
         } else if (prediction[0] === 1) {
             predResult.innerHTML = "Warning Potential Wildfire";
@@ -81,7 +86,7 @@ async function predict() {
         }
     } 
     catch(error){
-        predResult.innerHTML = "There was an issue";
+        predResult.innerHTML = error.message;
         predResult.classList.add('unsure');
     }
 
